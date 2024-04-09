@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-function MainContent() {
-  const url = "http://localhost:8000/code"
 
+function MainContent() {
+  const url = process.env.BACKEND;
   const [text, setText] = useState('');
   const [output, setOutput] = useState('');
 
