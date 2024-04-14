@@ -32,24 +32,22 @@ def get_code_from_user(code:str):
     
     tokenData = ""
     maxLine = tokens[-1].getLine()
-    tokenData += f"\nLEXEMA:[\n\n" 
     posLastTokenViewed = 0
     tab = "\t"
+
     for line in range(1,maxLine+1):
-        tokenData += f"{tab}Content Line {line}:[\n" 
+        tokenData += f"[ " 
         listTokenLine = []
         for lineTokens in range(posLastTokenViewed, len(tokens)):
             posLastTokenViewed = lineTokens
             
             if tokens[lineTokens].getLine() == line:
-                tokenData += f"{tab+tab}[{tokens[lineTokens].tokenComplete()}]\n"
+                tokenData += f"[{tokens[lineTokens].tokenComplete()}]"
                 listTokenData = [tokenData]
                 listTokenLine.append(listTokenData)
             else:
                 break
-
+        tokenData += f" ]" 
         tokenList.append(listTokenLine)
-        tokenData += f"{tab}]\n\n"           
-    tokenData +="]"
  
     return tokenList
