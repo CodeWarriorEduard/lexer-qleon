@@ -27,9 +27,26 @@ def test_connection():
 
 @app.post("/code")
 def get_code_from_user(code:str):
-    output = Qleon.run(code)
+    tokens = Qleon.run(code)
     o = []
-    for i in output:
-        o.append([i._Token__tokenValue,i._Token__tokenType])
+
+    tokenData = ""
+    maxLine = tokens[-1].getLine()
+    tokenData += f"\nLEXEMA:[\n\n" 
+    posLastTokenViewed = 0
+    tab = "\t"
+    for line in range(1,maxLine+1):
+        tokenData += f"{tab}Content Line {line}:[\n" 
+        for lineTokens in range(posLastTokenViewed, len(tokens)):
+            posLastTokenViewed = lineTokens 
+            if tokens[lineTokens].getLine() == line:
+                tokenData += f"{tab+tab}[{tokens[lineTokens].tokenComplete()}]\n"
+            else: 
+                break
+        tokenData += f"{tab}]\n\n"           
+    tokenData +="]"
+
+
+    o.append(tokenData)
         
     return o
