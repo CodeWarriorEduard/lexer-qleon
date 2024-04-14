@@ -25,9 +25,8 @@ function MainContent() {
           return(
             <>
             
-              <p>{`Line Content ${index+1}:`}</p>
-              <br />
-              <p>{`${el}`}</p>
+              <p class = "tabLin">{`Line Content ${index+1}:`}</p>
+                {el.map((token, idx) =><p class="tabTok" key={idx}>{token}</p>)}
               <br />
             </>
           )

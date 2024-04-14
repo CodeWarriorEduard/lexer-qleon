@@ -21,6 +21,13 @@ header{
   border-bottom: 1px solid white;
 }
 
+.tabTok{
+  text-indent: 40px;
+}
+.tabLin{
+  text-indent: 20px;
+}
+
 .header-content{
   height: 120px;
   display: flex;
