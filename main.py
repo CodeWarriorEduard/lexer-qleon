@@ -45,4 +45,4 @@ def get_code_from_user(code:str):
         tokenData += f"{tab}]\n\n"           
     tokenData +="]"
  
-    return tokenData
+    return [tokenData]
