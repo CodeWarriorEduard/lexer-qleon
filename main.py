@@ -38,15 +38,11 @@ def get_code_from_user(code:str):
     for line in range(1,maxLine+1):
         tokenData += f"[ " 
         listTokenLine = []
-        for lineTokens in range(posLastTokenViewed, len(tokens)):
-            posLastTokenViewed = lineTokens
-            
+        for lineTokens in range(len(tokens)):
             if tokens[lineTokens].getLine() == line:
                 tokenData += f"[{tokens[lineTokens].tokenComplete()}]"
                 listTokenData = [tokenData]
                 listTokenLine.append(listTokenData)
-            else:
-                break
         tokenData += f" ]" 
         tokenList.append(listTokenLine)
  
