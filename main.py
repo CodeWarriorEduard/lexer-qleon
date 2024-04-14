@@ -28,6 +28,7 @@ def test_connection():
 @app.post("/code")
 def get_code_from_user(code:str):
     tokens = Qleon.run(code)
+    tokenList = []
     
     tokenData = ""
     maxLine = tokens[-1].getLine()
@@ -36,13 +37,19 @@ def get_code_from_user(code:str):
     tab = "\t"
     for line in range(1,maxLine+1):
         tokenData += f"{tab}Content Line {line}:[\n" 
+        listTokenLine = []
         for lineTokens in range(posLastTokenViewed, len(tokens)):
             posLastTokenViewed = lineTokens
+            
             if tokens[lineTokens].getLine() == line:
                 tokenData += f"{tab+tab}[{tokens[lineTokens].tokenComplete()}]\n"
+                listTokenData = [tokenData]
+                listTokenLine.append(listTokenData)
             else:
                 break
+
+        tokenList.append[listTokenLine]
         tokenData += f"{tab}]\n\n"           
     tokenData +="]"
  
-    return [tokenData]
+    return tokenList
