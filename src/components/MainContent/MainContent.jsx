@@ -22,12 +22,12 @@ function MainContent() {
     .then (function (response){
       setOutput(() =>{
         return response.data.map((el, index)=>{
-
-          const token = el.map((tok) => <p>{tok[0]}</p>)
           return(
             <>
+            
               <p>{`Line Content ${index+1}:`}</p>
-              <p>{`${token}`}</p>
+              <br />
+              <p>{`${el}`}</p>
               <br />
             </>
           )
