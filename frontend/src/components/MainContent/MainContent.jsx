@@ -20,7 +20,16 @@ function MainContent() {
       }
   })
     .then (function (response){
-      setOutput(response.data)
+      setOutput(() =>{
+        return response.data.map((el)=>{
+          return(
+            <>
+              <p>{`Token: ${el}`}</p>
+              <br />
+            </>
+          )
+        })
+      })
     })
 
   }
