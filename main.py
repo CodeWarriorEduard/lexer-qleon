@@ -29,8 +29,8 @@ def test_connection():
 def get_code_from_user(code:str):
     output = Qleon.run(code)
     o = []
-    
+
     for i in output:
-        o.append([i._Token__tokenValue,i._Token__tokenType, i._Token__line])
+        o.append([i._Token__tokenValue,i._Token__tokenType, i._Token__line+1])
         
     return o
