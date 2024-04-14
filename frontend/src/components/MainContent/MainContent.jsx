@@ -22,9 +22,12 @@ function MainContent() {
     .then (function (response){
       setOutput(() =>{
         return response.data.map((el, index)=>{
+
+          const token = el.map((tok) => <p>{tok[0]}</p>)
           return(
             <>
-              <p>{`Line Content${index+1}: ${el}`}</p>
+              <p>{`Line Content ${index+1}:`}</p>
+              <p>{`${token}`}</p>
               <br />
             </>
           )
@@ -45,7 +48,12 @@ function MainContent() {
                 {
                  
                  output.length >0?( // Terminar 
-                  <div className="output-terminal">{"LEXEMA: \n"}{output}</div> 
+                  <div className="output-terminal">{"LEXEMA:"}
+                  <br />
+                  <br />
+                  {output}
+                  </div> 
+                  
                   ):(
                   <div className="output-terminal">Please write something before running!</div>     
                   )                 

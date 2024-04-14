@@ -8,7 +8,7 @@ function Header() {
         <div className="wrapper header-content">
             <img src={logo} alt="project-logo"/>
             <nav>
-                <p>INFO</p>
+                <p><a href="https://github.com/CodeWarriorEduard/lexer-qleon">INFO</a></p>
             </nav>
         </div>
     </header>
