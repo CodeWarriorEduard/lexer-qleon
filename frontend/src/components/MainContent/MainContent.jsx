@@ -20,7 +20,7 @@ function MainContent() {
       }
   })
     .then (function (response){
-      setOutput(JSON.stringify(response.data))
+      setOutput(response.data)
     })
 
   }
