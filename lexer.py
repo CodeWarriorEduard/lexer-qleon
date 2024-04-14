@@ -22,7 +22,7 @@ class Lexer:
     def __init__(self, code:str):
         self.__code = code
         self.__i = 0
-        self.__line = 0
+        self.__line = 1
         self.__tokens = []
         self.__chr = self.__code[self.__i]
         self.__token = None
