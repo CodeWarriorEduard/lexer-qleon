@@ -48,7 +48,7 @@ def get_code_from_user(code:str):
             else:
                 break
 
-        tokenList.append[listTokenLine]
+        tokenList.append(listTokenLine)
         tokenData += f"{tab}]\n\n"           
     tokenData +="]"
  
