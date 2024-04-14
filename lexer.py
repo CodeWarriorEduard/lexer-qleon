@@ -6,9 +6,11 @@ class Lexer:
     __numbers =  "0123456789"
     __operations = ['+','-','/','*','(',')','{','}',';']
 
-    __letters = "abcñdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZÑ"
+    __letters = "abcdefghijklmnopqrstuvwxyzñABCDEFGHIJKLMNOPQRSTUVWXYZÑ"
     __declarations = ["crt"] #Crear Variable crt = create
     __reserved = ["if", "elif","else", "while", "for", "show", "blank", "True", "true", "False", "false"]
+    __return = ["return"]
+    __function = ["fun"]
 
     __specialCharacters = [">", "<", "=", "&", "|", "!", "#"]   
     __booleans = ["&&", "||"]
@@ -22,7 +24,7 @@ class Lexer:
     def __init__(self, code:str):
         self.__code = code
         self.__i = 0
-        self.__line = 1
+        self.__line = 0
         self.__tokens = []
         self.__chr = self.__code[self.__i]
         self.__token = None
@@ -63,7 +65,7 @@ class Lexer:
     
             elif self.__chr in Lexer.__letters:
                 word = self.__extractWord()
-                
+                print(word)
                 if word in Lexer.__declarations:     
                     self.__token = Declaration(word)
 
@@ -86,8 +88,15 @@ class Lexer:
                         self.__token = Truee(word)
                     elif (word in ("False", "false")):
                         self.__token = Falsee(word)
+
+                elif word in Lexer.__function:
+                    self.__token = Function(word)
                 else: 
-                    self.__token = Variable(word)
+                    if word in Lexer.__return:
+                        self.__token = Return(word)
+                    else:
+                        self.__token = Variable(word)
+                print(self.__token)
 
             elif self.__chr in Lexer.__string:
                 wordl = self.__extractString()
@@ -95,7 +104,7 @@ class Lexer:
 
             elif self.__chr in Lexer.__specialCharacters:
                 specialChar = self.__extractEspecialChar()
-
+                
                 if specialChar in Lexer.__booleans:
                     if specialChar == "&&":
                         self.__token = And(specialChar)
@@ -119,6 +128,7 @@ class Lexer:
                 elif specialChar == '=':
                     self.__token = Assign(specialChar)
 
+                
                 elif specialChar in Lexer.__comment:
                     while ((self.__chr != Lexer.__lineBreak) and (self.__i < len(self.__code))):
                         specialChar += self.__chr
@@ -127,8 +137,15 @@ class Lexer:
                     self.__token = Comment(specialChar)
                     if(self.__i ==( len(self.__code)-1)):
                         self.__i == len(self.__code)
-                    
-                   
+                else:
+                    while((self.__chr != Lexer.__lineBreak) and (self.__i < len(self.__code))):
+                        specialChar += self.__chr
+                        self.__moveI()
+
+                    self.__token = Unknown(specialChar)
+                    if(self.__i ==( len(self.__code)-1)):
+                        self.__i == len(self.__code)
+                      
             elif self.__chr == Lexer.__lineBreak:
                 self.__moveI()
                 self.__line += 1
@@ -238,5 +255,3 @@ class Lexer:
 #lex.tokenizer()
 #print("------------------")
 #print(lex.getTokens())
-
-
