@@ -4,8 +4,6 @@ class Token:
         self.__tokenType = tokenType
         self.__tokenValue = tokenValue
         self.__line = -1
-
-        
         
     
     def __repr__(self) -> str:
@@ -160,3 +158,13 @@ class String(Token):
 class Unknown(Token):
     def __init__(self, tokenValue):
         super().__init__("UNKNOWN", tokenValue)       
+
+##FUNCTIONS
+class Function(Token):
+    def __init__(self, tokenValue):
+        super().__init__("FUNCTION", tokenValue) 
+
+##RETURN
+class Return(Token):
+    def __init__(self, tokenValue):
+        super().__init__("RETURN", tokenValue) 
