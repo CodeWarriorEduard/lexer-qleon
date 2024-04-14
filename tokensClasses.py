@@ -4,6 +4,8 @@ class Token:
         self.__tokenType = tokenType
         self.__tokenValue = tokenValue
         self.__line = -1
+
+        
         
     
     def __repr__(self) -> str:
