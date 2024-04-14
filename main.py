@@ -30,20 +30,19 @@ def get_code_from_user(code:str):
     tokens = Qleon.run(code)
     tokenList = []
     
-    tokenData = ""
+
     maxLine = tokens[-1].getLine()
     posLastTokenViewed = 0
-    tab = "\t"
+
 
     for line in range(1,maxLine+1):
-        tokenData += f"[ " 
         listTokenLine = []
-        for lineTokens in range(len(tokens)):
+        for lineTokens in range(posLastTokenViewed, len(tokens)):
+            posLastTokenViewed = lineTokens
             if tokens[lineTokens].getLine() == line:
-                tokenData += f"[{tokens[lineTokens].tokenComplete()}]"
-                listTokenData = [tokenData]
+                listTokenData = [f"{tokens[lineTokens].tokenComplete()}"]
                 listTokenLine.append(listTokenData)
-        tokenData += f" ]" 
+            else: 
+                break
         tokenList.append(listTokenLine)
- 
     return tokenList
