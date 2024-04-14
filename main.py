@@ -35,8 +35,8 @@ def get_code_from_user(code:str):
     tokenData += f"\nLEXEMA:[\n\n" 
     posLastTokenViewed = 0
     tab = "\t"
-    for line in range(1,maxLine+1):
-        tokenData += f"{tab}Content Line {line}:[\n" 
+    for line in range(0,maxLine):
+        tokenData += f"{tab}Content Line {line+1}:[\n" 
         for lineTokens in range(posLastTokenViewed, len(tokens)):
             posLastTokenViewed = lineTokens 
             if tokens[lineTokens].getLine() == line:
