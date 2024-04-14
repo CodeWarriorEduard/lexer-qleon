@@ -151,9 +151,15 @@ class Lexer:
                 self.__line += 1
                 continue
             else:
-                self.__token = Unknown(self.__chr)
-                self.__token.setLine(self.__line)
-                self.__moveI()
+                charUnknow = ""
+                while((self.__chr != Lexer.__lineBreak) and (self.__i < len(self.__code))):
+                    charUnknow += self.__chr
+                    self.__moveI()
+
+                self.__token = Unknown(charUnknow)
+                if(self.__i ==( len(self.__code)-1)):
+                    self.__i == len(self.__code)
+
 
             self.__token.setLine(self.__line)
             self.__tokens.append(self.__token)
@@ -164,8 +170,8 @@ class Lexer:
         while (self.__chr in Lexer.__letters) and (self.__i < len(self.__code)):
             word += self.__chr
             self.__moveI()
-        return word     
-
+        return word    
+    
     def __extractString(self):
         string = ''
         string += self.__chr
