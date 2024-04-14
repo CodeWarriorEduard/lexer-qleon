@@ -36,7 +36,6 @@ def get_code_from_user(code:str):
 
 
     for line in range(1,maxLine+1):
-        contenLine = "[ "
         listTokenLine = []
         for lineTokens in range(posLastTokenViewed, len(tokens)):
             posLastTokenViewed = lineTokens
@@ -45,6 +44,5 @@ def get_code_from_user(code:str):
                 listTokenLine.append(listTokenData)
             else: 
                 break
-        contenLine += listTokenLine +" ]"
         tokenList.append(listTokenLine)
     return tokenList
