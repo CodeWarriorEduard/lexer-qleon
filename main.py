@@ -7,7 +7,8 @@ app = FastAPI()
 
 
 origins = [
-    "https://frontendqleon.vercel.app"
+    "https://frontendqleon.vercel.app",
+    "https://qleon.netlify.app"
 ]
 
 app.add_middleware(
