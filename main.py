@@ -31,4 +31,5 @@ def get_code_from_user(code:str):
     o = []
     for i in output:
         o.append([i._Token__tokenValue,i._Token__tokenType])
+        
     return o
