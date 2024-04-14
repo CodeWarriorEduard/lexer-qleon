@@ -4,7 +4,7 @@ class Lexer:
     __stopWords = [" ", "\t"]
     __lineBreak = "\n"
     __numbers =  "0123456789"
-    __operations = ['+','-','/','*','(',')','{','}',';']
+    __operations = ['+','-','/','*','(',')','{','}',';', ',']
 
     __letters = "abcdefghijklmnopqrstuvwxyzñABCDEFGHIJKLMNOPQRSTUVWXYZÑ"
     __declarations = ["crt"] #Crear Variable crt = create
@@ -59,6 +59,8 @@ class Lexer:
                     self.__token = RightBrace(self.__chr)
                 elif self.__chr == ";":
                     self.__token = Semicolon(self.__chr)
+                elif self.__chr == ",":
+                    self.__token = Comma(self.__chr)
                 
 
                 self.__moveI()

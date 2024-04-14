@@ -168,3 +168,8 @@ class Function(Token):
 class Return(Token):
     def __init__(self, tokenValue):
         super().__init__("RETURN", tokenValue) 
+
+##COMMA
+class Comma(Token):
+    def __init__(self, tokenValue):
+        super().__init__("COMMA", tokenValue) 
