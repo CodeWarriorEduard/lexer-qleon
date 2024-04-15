@@ -5,6 +5,7 @@ __pycache__/
 *$py.class
 Pipfile
 Pipfile.lock
+.vercel
 
 # C extensions
 *.so
