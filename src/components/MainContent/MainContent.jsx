@@ -19,20 +19,22 @@ function MainContent() {
           code: text
       }
   })
-    .then (function (response){
-      setOutput(() =>{
-        return response.data.map((el, index)=>{
-          return(
-            <>
-            
-              <p class = "tabLin">{`Line Content ${index+1}:`}</p>
-                {el.map((token, idx) =><p class="tabTok" key={idx}>{token}</p>)}
-              <br />
-            </>
-          )
+      .then(function (response) {
+        setOutput(() => {
+          return response.data.map((el, index) => {
+            return (
+              <>
+                <p class="tabLin">{`Content of Line ${index + 1}:`}</p>
+                {
+                  el.length > 0 ? el.map((token, idx) => (<p className="tabTok" key={idx}> {token}</p>)) :
+                  <p className="tabTok">Line Empty</p>
+                }
+                <br />
+              </>
+            )
+          })
         })
       })
-    })
 
   }
   console.log(text.length)
