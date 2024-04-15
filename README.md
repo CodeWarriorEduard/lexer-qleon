@@ -36,6 +36,17 @@ saludo = "Hola mundo!"
 
 ```
 
+De igual forma Qleon admite el uso de variables globales usando nuestra palabra reservada crt, esta nos permitirá crear una variable que podrá ser usada en cualquier parte de nuestro código.
+
+Se usa de la siguiente forma:
+
+```
+
+crt var = valor
+show(var)  ## Muestra valor.
+
+```
+
 
 ### Comentarios
 
