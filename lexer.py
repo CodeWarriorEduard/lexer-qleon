@@ -1,8 +1,7 @@
 from tokensClasses import *
 class Lexer:
     #Tabla de Simbolos / Para mejorar 
-    __stopWords = [" ", "\t", """
-"""]
+    __stopWords = [" ", "\t", "\r\n", "\r"]
     __lineBreak = "\n"
     __numbers =  "0123456789"
     __operations = ['+','-','/','*','(',')','{','}',';', ',']
