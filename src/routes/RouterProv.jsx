@@ -10,7 +10,7 @@ function RouterProv(){
         Component:Index,
         },
         {path:"/info",
-        Component:Info
+        Component:Info,
         },
     ]);
     

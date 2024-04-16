@@ -10,6 +10,7 @@ import Footer from "../components/Footer/Footer";
 function Info() {
   document.documentElement.lang = 'es';
 
+
   useEffect(() => {
     const metaTag = document.createElement('meta');
     metaTag.setAttribute('name', 'google');
@@ -18,8 +19,19 @@ function Info() {
     return () => {
       document.head.removeChild(metaTag);
     };
-  }, []); 
+  }, []);
 
+  useEffect(() => { 
+    document.title = 'Docs QL';
+    return () => {
+      document.title = 'QLeon Web';
+    };
+  }, []);
+
+  useEffect(() => {
+    const favicon = document.querySelector('link[rel="icon"]');
+    favicon.href = 'logo.png';
+  }, []); 
 
 
 
@@ -38,31 +50,32 @@ function Info() {
     "Funciones",
     "Ciclos"
   ];
- 
 
-  useEffect(() => { 
+
+  useEffect(() => {
     fetchMd()
   }, [data]);
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(()=>{
+    setTimeout(() => {
       setLoading(false);
-    },1300);
+    }, 1300);
   }, [])
 
   const url = "https://raw.githubusercontent.com/CodeWarriorEduard/lexer-qleon/main/README.md"
 
-  const fetchMd = () =>{
+  const fetchMd = () => {
     axios.get(url)
-    .then((response)=>{
-      const htmlT = converter.makeHtml(response.data);
-      setData(htmlT);
-    })
-    .catch(error =>{
-      console.error(error)
-    })
+      .then((response) => {
+        const htmlT = converter.makeHtml(response.data);
+        setData(htmlT);
+      })
+      .catch(error => {
+        console.error(error)
+      })
   }
+
 
 
   // const getOffset = (i) =>{
@@ -73,17 +86,18 @@ function Info() {
   //   };
   // }
 
-  const findWord = (e) => {  
+  const findWord = (e) => {
     const elements = document.querySelectorAll('.info-data h2, .info-data h3');
     elements.forEach(element => {
       const text = element.innerHTML;
       if (text.includes(e)) {
         const offset = element.getBoundingClientRect();
 
-        window.scrollTo(offset.left + window.scrollX, offset.top-80 + window.scrollY);
+        window.scrollTo(offset.left + window.scrollX, offset.top - 80 + window.scrollY);
       }
     });
   };
+
 
 
   return (
@@ -95,25 +109,33 @@ function Info() {
           <h2>QLeon Project</h2>
           <MoonLoader  color={'#FFFFFF'} aria-label='Qleon Project' loading={loading}/>
           </div>
-  
-        ):(
-          <div style={{backgroundColor:"#434242", paddingBottom: "20px"}}>
-          <Header/>
-          <div className=" info-content-container">
+
+        ) : (
+          <div style={{ backgroundColor: "#434242", paddingBottom: "20px" }}>
+            <div class="head-info">
+              <Header />
+                <header>
+                  <div className="wrapper header-content">
+                    <h1><a class="conten-header" href="/">Return to Lexer</a></h1>
+                  </div>
+                </header>
+            </div>
             
-            <div className=" info-sidebar">
+            <div className=" info-content-container">
+
+              <div className=" info-sidebar">
                 <ul className="info-sidebar-content">
                 {infoHl.map((el, index) => (
                    <li key={index} onClick={()=> findWord(el)}>{el}</li>
                     ))}
                 </ul>
-            </div>
+              </div>
 
           <div dangerouslySetInnerHTML={{__html: data}} style={{color:"black"}} className="info-data wrapper"></div>
 
+            </div>
+            <Footer />
           </div>
-          <Footer/>
-        </div>
         )
       }
 

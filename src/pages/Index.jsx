@@ -8,6 +8,19 @@ import Footer from '../components/Footer/Footer';
 function Index() {
   document.documentElement.lang = 'es';
 
+  useEffect(() => { 
+    document.title = 'QLeon';
+    return () => {
+      document.title = 'QLeon';
+    };
+  }, []);
+
+  useEffect(() => {
+    const favicon = document.querySelector('link[rel="icon"]');
+    favicon.href = 'logo.png';
+  }, []); 
+
+
   useEffect(() => {
     const metaTag = document.createElement('meta');
     metaTag.setAttribute('name', 'google');
