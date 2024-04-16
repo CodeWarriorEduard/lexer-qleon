@@ -1,0 +1,28 @@
+.wrapper{
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+.loading-container{
+  background-color: #222222;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+
+}
+
+footer{
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #222222;
+  position: fixed;
+  bottom: 0;
+}
