@@ -1,19 +1,12 @@
-import logo from "./../../assets/logo2.png";
+import './Header.styles.css'
 
 function Header() {
   return (
-    <>
-    
     <header>
-        <div className="wrapper header-content">
-            <img src={logo} alt="project-logo"/>
-            <nav>
-                <p><a href="https://github.com/CodeWarriorEduard/lexer-qleon">INFO</a></p>
-            </nav>
+        <div className='wrapper header-content'>
+            <h1>QLeon</h1>
         </div>
     </header>
-
-    </>
   )
 }
 

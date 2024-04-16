@@ -1,0 +1,39 @@
+.options-container{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #222222;
+}
+
+
+
+.options-content{
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+
+.options-btn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-option:hover{
+    border-radius: 100%;
+    border: 2px solid #22A39F;
+}
+
+.dropdown{
+    width: 200px;
+}
+
+
+#file-select{
+    height: 10px;
+}

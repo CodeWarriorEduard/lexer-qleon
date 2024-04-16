@@ -1,0 +1,15 @@
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+    width: 180px;
+    height: 100%;
+    background-color: #222222;
+}
+
+
+.run-btn{
+    background-color: green;
+    border-radius: 10px;
+}
