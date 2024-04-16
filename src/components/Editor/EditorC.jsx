@@ -100,7 +100,7 @@ function EditorC() {
             <Box>
               <Tab label="Qleon Code" style={{backgroundColor:"#222222", borderTopLeftRadius: "10px", color:"white"}}/>
             </Box>
-            <Editor height="60vh" width="autosize"theme='qleon' onChange={handleEditorChange}/>
+            <Editor height="60vh" width="autosize"theme='qleon' onChange={handleEditorChange} defaultValue=''/>
             </div>
             <div className='terminal-container grid-el'>
               <Box>
