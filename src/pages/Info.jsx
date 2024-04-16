@@ -8,6 +8,21 @@ import Footer from "../components/Footer/Footer";
 
 
 function Info() {
+  document.documentElement.lang = 'es';
+
+  useEffect(() => {
+    const metaTag = document.createElement('meta');
+    metaTag.setAttribute('name', 'google');
+    metaTag.setAttribute('content', 'notranslate');
+    document.head.appendChild(metaTag);
+    return () => {
+      document.head.removeChild(metaTag);
+    };
+  }, []); 
+
+
+
+
   const converter = new Showdown.Converter();
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);

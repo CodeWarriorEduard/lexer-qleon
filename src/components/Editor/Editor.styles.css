@@ -30,27 +30,29 @@
         padding: 0px;
         height: 100%;
         place-items: center;
+        
     }  
     .editor-container{
+        padding-right: 40px;
         order: 2;
         width: 95%;
-        margin-left: px;
     }
 
+
+    .terminal-impl{
+        
+        font-size: 12px;
+    }
 
     .options-content{
         width: 100%;
     }
 
-    .MuiBox-root{
-        width: 100%;
-    }
-    .css-0{
-        max-width: 100%;
-    }
+
     .terminal-container{
         order: 1;
         width: 95%;
+        
     }
 
     .sidebar-container{
@@ -63,7 +65,7 @@
 
     .principal{
         height: auto;
-        min-height: 220vh;
+        min-height: 190vh;
     }
 }
 

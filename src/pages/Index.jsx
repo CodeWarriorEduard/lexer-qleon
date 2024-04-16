@@ -6,6 +6,18 @@ import MainContent from '../components/MainContent/MainContent';
 import Footer from '../components/Footer/Footer';
 
 function Index() {
+  document.documentElement.lang = 'es';
+
+  useEffect(() => {
+    const metaTag = document.createElement('meta');
+    metaTag.setAttribute('name', 'google');
+    metaTag.setAttribute('content', 'notranslate');
+    document.head.appendChild(metaTag);
+    return () => {
+      document.head.removeChild(metaTag);
+    };
+  }, []); 
+
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
