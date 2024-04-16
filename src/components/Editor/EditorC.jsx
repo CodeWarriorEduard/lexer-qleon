@@ -64,9 +64,11 @@ function EditorC() {
         })
       })
   }
+  console.log(text);
 
   const handleEditorChange = (value) =>{
     const Ntext = value; //Quito los saltos de linea.
+    
     setText(Ntext);
   }
 
