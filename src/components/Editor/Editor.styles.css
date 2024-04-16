@@ -4,9 +4,16 @@
     display: grid;
     padding: 20px;
     height: 86vh;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 55% 45%;
 }
-
+.terminal-impl{
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 20px;
+    overflow-y: scroll;
+    height: 60vh;
+    background-color: black;
+}
 
 .main-content{
     width: 100%;
@@ -82,11 +89,5 @@
 }
 
 
-.terminal-impl{
-    width: 100%;
-    padding: 20px;
-    overflow-y: scroll;
-    height: 60vh;
-    background-color: black;
-}
+
 
