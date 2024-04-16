@@ -55,7 +55,7 @@ function EditorC() {
                 <p className="tabLin">{`Content of Line ${index + 1}:`}</p>
                 {
                   el.length > 0 ? el.map((token, idx) => (<p className="tabTok" key={idx}> {token}</p>)) :
-                  <p className="tabTok">Line Empty</p>
+                  <p className="tabTok">Line Empty </p>
                 }
                 <br />
               </>
