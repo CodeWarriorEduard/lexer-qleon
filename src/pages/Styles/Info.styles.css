@@ -30,9 +30,9 @@ pre{
 
 .info-sidebar{
     position: fixed;
+    justify-content: center;
     left: 0;
     top: 0px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
@@ -43,11 +43,10 @@ pre{
 }
 
 .info-sidebar-content{
+    padding-left: 10px;
     display: flex;
-    padding: 20px;
-    padding-top:100px;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     flex-direction: column;
 }
 

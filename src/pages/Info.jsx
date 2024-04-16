@@ -19,7 +19,7 @@ function Info() {
     "Imprimir en pantalla",
     "Operaciones matemáticas básicas",
     "Condicionales",
-    "Operadores lógicos y de comparación",
+    "Operadores logicos y de comparación",
     "Funciones",
     "Ciclos"
   ];
