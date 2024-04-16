@@ -23,6 +23,53 @@
 
 }
 
+@media (max-width: 1040px) {
+    .et-container{
+        grid-template-columns: none;
+        width: 100%;
+        padding: 0px;
+        height: 100%;
+        place-items: center;
+    }  
+    .editor-container{
+        order: 2;
+        width: 95%;
+        margin-left: px;
+    }
+
+
+    .options-content{
+        width: 100%;
+    }
+
+    .MuiBox-root{
+        width: 100%;
+    }
+    .css-0{
+        max-width: 100%;
+    }
+    .terminal-container{
+        order: 1;
+        width: 95%;
+    }
+
+    .sidebar-container{
+        width: 100%;
+    }
+    .main-content{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .principal{
+        height: auto;
+        min-height: 220vh;
+    }
+}
+
+.principal{
+    background-color: #434242;
+}
 
 .terminal-container{
     padding: 20px;

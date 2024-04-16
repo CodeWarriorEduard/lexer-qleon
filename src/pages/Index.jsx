@@ -17,7 +17,7 @@ function Index() {
     
   
     return (
-      <div style={{height:"100vh"}}>
+      <div class = "principal" style={{height:"100vh"}}>
         {
           loading ?(
               <div className='loading-container'>

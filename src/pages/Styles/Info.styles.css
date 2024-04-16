@@ -18,9 +18,10 @@ pre{
 }
 
 
+
 .info-data > p,h3 {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .info-content-container{
@@ -49,6 +50,11 @@ pre{
     gap: 25px;
 }
 
+.options-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 .info-sidebar-content > li{
     padding-left: 20px;
@@ -64,3 +70,4 @@ pre{
     border-radius: 8px;
     cursor: pointer;
 }
+
