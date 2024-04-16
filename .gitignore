@@ -9,7 +9,7 @@ Pipfile.lock
 
 # C extensions
 *.so
-
+node_modules
 # Distribution / packaging
 .Python
 build/
