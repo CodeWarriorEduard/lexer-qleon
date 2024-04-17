@@ -40,7 +40,6 @@ function EditorC() {
   })
 
   const run = ()=>{
-    console.log("Gola")
     axios.post(url, null, {
       params: {
           code: text
@@ -63,12 +62,15 @@ function EditorC() {
           })
         })
       })
+      const elemnto = document.querySelector('.terminal-container')
+      if(elemnto){
+        elemnto.scrollIntoView({behavior: 'smooth'})
+      }
   }
   console.log(text);
 
   const handleEditorChange = (value) =>{
     const Ntext = value; //Quito los saltos de linea.
-    
     setText(Ntext);
   }
 

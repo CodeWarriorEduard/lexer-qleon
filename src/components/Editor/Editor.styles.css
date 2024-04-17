@@ -41,7 +41,7 @@
     }  
     .editor-container{
         padding-right: 40px;
-        order: 2;
+        order: 1;
         width: 95%;
     }
 
@@ -57,7 +57,7 @@
 
 
     .terminal-container{
-        order: 1;
+        order: 2;
         width: 95%;
         
     }
@@ -72,7 +72,7 @@
 
     .principal{
         height: auto;
-        min-height: 190vh;
+        min-height: 200vh;
     }
 }
 
