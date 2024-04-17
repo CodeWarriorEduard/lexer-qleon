@@ -40,32 +40,32 @@ function EditorC() {
   })
 
   const run = ()=>{
+    const elemnto = document.querySelector('.terminal-container')
+    if(elemnto){
+      elemnto.scrollIntoView({behavior: 'smooth'})
+    }
     axios.post(url, null, {
       params: {
           code: text
       }
   })
-      .then(function (response) {
-        console.log(response)
-        setOutput(() => {
-          return response.data.map((el, index) => {
-            return (
-              <>
-                <p className="tabLin">{`Content of Line ${index + 1}:`}</p>
-                {
-                  el.length > 0 ? el.map((token, idx) => (<p className="tabTok" key={idx}> {token}</p>)) :
-                  <p className="tabTok">Line Empty </p>
-                }
-                <br />
-              </>
-            )
-          })
+    .then(function (response) {
+      console.log(response)
+      setOutput(() => {
+        return response.data.map((el, index) => {
+          return (
+            <>
+              <p className="tabLin">{`Content of Line ${index + 1}:`}</p>
+              {
+                el.length > 0 ? el.map((token, idx) => (<p className="tabTok" key={idx}> {token}</p>)) :
+                <p className="tabTok">Line Empty </p>
+              }
+              <br />
+            </>
+          )
         })
       })
-      const elemnto = document.querySelector('.terminal-container')
-      if(elemnto){
-        elemnto.scrollIntoView({behavior: 'smooth'})
-      }
+    })
   }
   console.log(text);
 
